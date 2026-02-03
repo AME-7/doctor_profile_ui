@@ -4,7 +4,7 @@ class MainButton extends StatelessWidget {
   const MainButton({
     super.key,
     required this.text,
-    required this.bgcolor,
+    this.bgcolor = Colors.deepPurple,
     required this.onPressed,
   });
   final String text;

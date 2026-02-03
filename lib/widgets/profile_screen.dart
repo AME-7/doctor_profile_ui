@@ -25,28 +25,45 @@ class ProfileScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 35, 20, 15),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            profileHeader(),
-            SizedBox(height: 20),
-            Text(
-              'About',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 5),
-            Text(
-              'Dr. Ahmed Ali is an experienced ophthalmologist dedicated to providing high-quality eye care, focusing on accurate diagnosis and patient comfort.',
-              style: TextStyle(fontSize: 16),
-            ),
-            SizedBox(height: 10),
-            AddressDetalis(),
-            Divider(height: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              ProfileHeader(),
+              SizedBox(height: 20),
+              Text(
+                'About',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 5),
+              Text(
+                'Dr. Ahmed Ali is an experienced ophthalmologist dedicated to providing high-quality eye care, focusing on accurate diagnosis and patient comfort.',
+                style: TextStyle(fontSize: 16),
+              ),
+              SizedBox(height: 10),
+              AddressDetalis(),
+              Divider(height: 30),
 
-            ContactsCard(),
+              ContactsCard(),
+              SizedBox(height: 10),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(7.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            MainButton(
+              text: 'chat with Dr.Ahmed',
+              bgcolor: Colors.green,
+              onPressed: () {},
+            ),
             SizedBox(height: 10),
-            MainButton(),
+            MainButton(text: 'Book an Appointment', onPressed: () {}),
           ],
         ),
       ),

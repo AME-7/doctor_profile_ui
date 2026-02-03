@@ -14,7 +14,17 @@ class DeyailsTile extends StatelessWidget {
           child: Icon(icon, color: Colors.white, size: 16),
         ),
         SizedBox(width: 20),
-        Text(text, style: TextStyle(fontSize: 16)),
+        Expanded(
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              text,
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
+        ),
       ],
     );
   }
